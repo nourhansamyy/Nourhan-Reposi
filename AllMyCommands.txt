@@ -1,0 +1,121 @@
+   55  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
+   56  source ~/.bash_profile
+   57  csrutil disable
+   58  kill safari
+   59  cd Des
+   60  cd Desktop/
+   61  kill safari
+   62  git
+   63  git --version
+   64  which -a git
+   65  /user/bin/git --version
+   66  /usr/bin/git --version
+   67  /usr/local/bin/git --version
+   68  open .bashrc
+   69  is -a
+   70  anothers is -a
+   71  open .bash_profile
+   72  echo $PATH
+   73  . bash_profile
+   74  ls
+   75  ls -a
+   76  source .bash_profile
+   77  which git
+   78  echo $PATH
+   79  open .bash_profile
+   80  source .bash_profile
+   81  echo $PATH
+   82  which git
+   83  git --version
+   84  exit
+   85  git --version
+   86  mkdir test
+   87  cd test/
+   88  git init
+   89  cd ..
+   90  exit
+   91  gir config --global user.email "nourhan.abdelwahab@student.guc.edu.eg"
+   92   gir config --global user.email "nourhan.abdelwahab@student.guc.edu.eg"
+   93  git config --global user.email "nourhan.abdelwahab@student.guc.edu.eg" git config --global user.name "nourhansamyy"
+   94  $ cd 
+   95  ~/Desktop/
+   96  $ cd ~
+   97  $ cd ~/repos
+   98  cd ~
+   99  mkdir repos
+  100  cd ~/repos
+  101  git clone https://github.com/nourhansamyy/Nourhan-Reposi.git
+  102  ls
+  103  cd ~/repos/bitbucketstationlocations/
+  104  cd /Users/Mac/Desktop/Git/section 1.1 Getting Started/
+  105  cd Mac/Desktop/Git/1stFile/
+  106  cd /Users/Mac/repos/Nourhan-Reposi/
+  107  get init
+  108  git init
+  109  defaults write com.apple.finder AppleShowALLFiles YES
+  110  defaults write com.apple.finder AppleShowALLFiles YES
+  111  cd cd /Users/Mac/repos/Nourhan-Reposi/Myfolder
+  112  cd /Users/Mac/repos/Nourhan-Reposi/Myfolder
+  113  get init
+  114  git init
+  115  defaults write com.apple.finder AppleShowALLFiles YES
+  116  git status
+  117  touch firstfile.txt
+  118  get touch Secondfile.txt
+  119  touch Secondfile.txt
+  120  touch Thirdfile.txt
+  121  ls
+  122  git status
+  123  git add Secondfile.txt
+  124  git add Thirdfile.txt
+  125  git add firstfile.txt
+  126  git status
+  127  git commit -m "added Secondfile.txt"
+  128  git status
+  129  touch AllMyCommands.txt
+  130  git add AllMyCommands.txt
+  131  git status
+  132  git commit
+  133  git status
+  134  cd /Users/Mac/repos/Nourhan-Reposi/Myfolder
+  135  git init
+  136  git status
+  137  git status
+  138  git add *.txt
+  139  git status
+Last login: Sat Feb 10 17:13:34 on ttys001
+192:~ Mac$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+192:~ Mac$ cd /Users/Mac/repos/Nourhan-Reposi/Myfolder
+192:Myfolder Mac$ git init
+Reinitialized existing Git repository in /Users/Mac/repos/Nourhan-Reposi/Myfolder/.git/
+192:Myfolder Mac$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   AllMyCommands.txt
+
+192:Myfolder Mac$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   AllMyCommands.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Secondfile.txt
+	modified:   firstfile.txt
+
+192:Myfolder Mac$ git add *.txt
+192:Myfolder Mac$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   AllMyCommands.txt
+	modified:   Secondfile.txt
+	modified:   firstfile.txt
