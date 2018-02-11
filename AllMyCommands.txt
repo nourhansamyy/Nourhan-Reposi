@@ -1,3 +1,5 @@
+   
+   // I got quit from terminal so i get the previous commands from history ( till line 139)--
    55  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
    56  source ~/.bash_profile
    57  csrutil disable
@@ -229,4 +231,508 @@ To https://github.com/nourhansamyy/Nourhan-Reposi.git
    491845c..f691e1a  HEAD -> master
 macs-MacBook-Pro-6:Myfolder Mac$ git branch -D tmp
 Deleted branch tmp (was 491845c).
+
+macs-MacBook-Pro-6:Myfolder Mac$ git rm Thirdfile.txt
+rm 'Thirdfile.txt'
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m "remove Thirdfile.txt"
+[master 4566159] remove Thirdfile.txt
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 Thirdfile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git push origin master
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/nourhansamyy/Nourhan-Reposi.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+macs-MacBook-Pro-6:Myfolder Mac$ git fetch origin master:tmp
+gitremote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/nourhansamyy/Nourhan-Reposi
+ * [new branch]      master     -> tmp
+   f691e1a..a6db053  master     -> origin/master
+macs-MacBook-Pro-6:Myfolder Mac$ git rebase tmp
+First, rewinding head to replay your work on top of it...
+Applying: remove Thirdfile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git push origin HEAD:master
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 239 bytes | 239.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+giTo https://github.com/nourhansamyy/Nourhan-Reposi.git
+   a6db053..d37fa6f  HEAD -> master
+macs-MacBook-Pro-6:Myfolder Mac$ git branch -D tmp
+Deleted branch tmp (was a6db053).
+macs-MacBook-Pro-6:Myfolder Mac$ git checkout Thirdfile.txt
+error: pathspec 'Thirdfile.txt' did not match any file(s) known to git.
+macs-MacBook-Pro-6:Myfolder Mac$ touch ThirdFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	ThirdFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+macs-MacBook-Pro-6:Myfolder Mac$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	ThirdFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m "i deleted the third file by mistake | added again"
+On branch master
+Untracked files:
+	ThirdFile.txt
+
+nothing added to commit but untracked files present
+macs-MacBook-Pro-6:Myfolder Mac$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+macs-MacBook-Pro-6:Myfolder Mac$ git add ThirdFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   ThirdFile.txt
+
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m "i dlelted third file by mistake | added again"
+[master a40e499] i dlelted third file by mistake | added again
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ThirdFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 299 bytes | 299.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+   d37fa6f..a40e499  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ThirdFile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+macs-MacBook-Pro-6:Myfolder Mac$ git add ThirdFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   ThirdFile.txt
+
+macs-MacBook-Pro-6:Myfolder Mac$ git rm Secondfile.txt
+rm 'Secondfile.txt'
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m "removed Secondfile.txt"
+[master e9619e7] removed Secondfile.txt
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 1 insertion(+), 8 deletions(-)
+ delete mode 100644 Secondfile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.03 KiB | 1.03 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+   a40e499..e9619e7  master -> master
+macs-MacBook-Pro-6:Myfolder Mac$ git touch Secondfile.txt
+git: 'touch' is not a git command. See 'git --help'.
+macs-MacBook-Pro-6:Myfolder Mac$ git add Secondfile.txt
+fatal: pathspec 'Secondfile.txt' did not match any files
+macs-MacBook-Pro-6:Myfolder Mac$ touch SecondFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git add SecondFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   SecondFile.txt
+
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   SecondFile.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   SecondFile.txt
+
+macs-MacBook-Pro-6:Myfolder Mac$ git add SecondFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m "i added the Second file again"
+[master 6675f28] i added the Second file again
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 8 insertions(+)
+ create mode 100644 SecondFile.txt
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.43 KiB | 3.43 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+   e9619e7..6675f28  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+macs-MacBook-Pro-6:Myfolder Mac$ echo -e "\n Sprint 0" >> README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+macs-MacBook-Pro-6:Myfolder Mac$ git add README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m " added the Project title to the README.md"
+[master ef73a9b]  added the Project title to the README.md
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+macs-MacBook-Pro-6:Myfolder Mac$ get push -u origin master
+-bash: get: command not found
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+   6675f28..ef73a9b  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+macs-MacBook-Pro-6:Myfolder Mac$ echo "\n This Repo contains three file,The first file contains Getting Started-About Version Control form. The seconf file contains Git branching-branches in a Nutshell, As for the third file it contains Distributed Git-Distributed Workflows" README.md
+\n This Repo contains three file,The first file contains Getting Started-About Version Control form. The seconf file contains Git branching-branches in a Nutshell, As for the third file it contains Distributed Git-Distributed Workflows README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+macs-MacBook-Pro-6:Myfolder Mac$ echo "\n This Repo contains three file,The first file contains Getting Started-About Version Control form. The seconf file contains Git branching-branches in a Nutshell, As for the third file it contains Distributed Git-Distributed Workflows" >>  README.md
+macs-MacBook-Pro-6:Myfolder Mac$ get status
+-bash: get: command not found
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+macs-MacBook-Pro-6:Myfolder Mac$ git add README.md
+macs-MacBook-Pro-6:Myfolder Mac$ echo -e "\n Nourhan samy , 37-12655" >> README.md
+macs-MacBook-Pro-6:Myfolder Mac$ echo -e "\n Nourhan samy , 37-12655" >> README.md
+macs-MacBook-Pro-6:Myfolder Mac$ echo -e "\n (book Chacon, Scott, and Ben Straub. Pro Git. Apress,
+> 2014.)" README.md
+
+ (book Chacon, Scott, and Ben Straub. Pro Git. Apress,
+2014.) README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+macs-MacBook-Pro-6:Myfolder Mac$ git add README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m " added more info in the README file"
+[master fe1574e]  added more info in the README file
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 5 insertions(+)
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 471 bytes | 471.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+   ef73a9b..fe1574e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+macs-MacBook-Pro-6:Myfolder Mac$ echo -e "\n (book Chacon, Scott, and Ben Straub. Pro Git. Apress,
+> 
+> 
+> >> README.md
+> 
+> "
+
+ (book Chacon, Scott, and Ben Straub. Pro Git. Apress,
+
+
+>> README.md
+
+
+macs-MacBook-Pro-6:Myfolder Mac$ echo -e "\n book Chacon, Scott , and Ben Straub. Pro Git. Apress, 2014. " >> README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+macs-MacBook-Pro-6:Myfolder Mac$ git add README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m " The info is completed "
+[master 4b62f0b]  The info is completed
+ Committer: mac <Mac@macs-MacBook-Pro-6.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin master
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/nourhansamyy/Nourhan-Reposi.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+macs-MacBook-Pro-6:Myfolder Mac$ git fetch origin master:tmp
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/nourhansamyy/Nourhan-Reposi
+ * [new branch]      master     -> tmp
+   fe1574e..bc60c20  master     -> origin/master
+macs-MacBook-Pro-6:Myfolder Mac$ git rebase tmp
+First, rewinding head to replay your work on top of it...
+Applying:  The info is completed
+Using index info to reconstruct a base tree...
+M	README.md
+.git/rebase-apply/patch:10: trailing whitespace.
+ book Chacon, Scott , and Ben Straub. Pro Git. Apress, 2014. 
+warning: 1 line adds whitespace errors.
+Falling back to patching base and 3-way merge...
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: Failed to merge in the changes.
+Patch failed at 0001  The info is completed
+The copy of the patch that failed is found in: .git/rebase-apply/patch
+
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+macs-MacBook-Pro-6:Myfolder Mac$ git push origin HEAD:master
+Everything up-to-date
+macs-MacBook-Pro-6:Myfolder Mac$ git branch -D tmp
+Deleted branch tmp (was bc60c20).
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+rebase in progress; onto bc60c20
+You are currently rebasing branch 'master' on 'bc60c20'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+macs-MacBook-Pro-6:Myfolder Mac$ get rebase --skip
+-bash: get: command not found
+macs-MacBook-Pro-6:Myfolder Mac$ git rebase --skip
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+macs-MacBook-Pro-6:Myfolder Mac$ git branch ReadMe
+macs-MacBook-Pro-6:Myfolder Mac$ git checkout ReadMe
+Switched to branch 'ReadMe'
+macs-MacBook-Pro-6:Myfolder Mac$ git init
+Reinitialized existing Git repository in /Users/Mac/repos/Nourhan-Reposi/Myfolder/.git/
+macs-MacBook-Pro-6:Myfolder Mac$ git add README.md
+macs-MacBook-Pro-6:Myfolder Mac$ git status
+On branch ReadMe
+nothing to commit, working tree clean
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m " a new branch called ReadMe is done and then I checkout" 
+On branch ReadMe
+nothing to commit, working tree clean
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u ReadMe
+fatal: 'ReadMe' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin ReadMe
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (37/37), 10.88 KiB | 2.17 MiB/s, done.
+Total 37 (delta 14), reused 0 (delta 0)
+remote: Resolving deltas: 100% (14/14), done.
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+ * [new branch]      ReadMe -> ReadMe
+Branch 'ReadMe' set up to track remote branch 'ReadMe' from 'origin'.
+macs-MacBook-Pro-6:Myfolder Mac$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+macs-MacBook-Pro-6:Myfolder Mac$ git merge ReadMe
+Already up to date.
+macs-MacBook-Pro-6:Myfolder Mac$ git push -u origin master
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/nourhansamyy/Nourhan-Reposi.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+macs-MacBook-Pro-6:Myfolder Mac$ git fetch origin master:tmp
+gremote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/nourhansamyy/Nourhan-Reposi
+ * [new branch]      master     -> tmp
+   bc60c20..c74d1d6  master     -> origin/master
+macs-MacBook-Pro-6:Myfolder Mac$ git rebase tmp
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to tmp.
+macs-MacBook-Pro-6:Myfolder Mac$ git push origin HEAD:master
+Everything up-to-date
+macs-MacBook-Pro-6:Myfolder Mac$ git branch -D tmp
+Deleted branch tmp (was c74d1d6).
+macs-MacBook-Pro-6:Myfolder Mac$ git commit -m " the branch ReadMe is mereged with master now
+> "
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
 macs-MacBook-Pro-6:Myfolder Mac$ 
+
