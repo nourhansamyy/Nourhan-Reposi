@@ -736,3 +736,43 @@ Your branch is up to date with 'origin/master'.
 nothing to commit, working tree clean
 macs-MacBook-Pro-6:Myfolder Mac$ 
 
+Please make sure you have the correct access rights
+and the repository exists.
+macs-MacBook-Pro-6:Myfolder Mac$ git fetch --all
+Fetching origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/nourhansamyy/Nourhan-Reposi
+   c74d1d6..b2a5d64  master     -> origin/master
+macs-MacBook-Pro-6:Myfolder Mac$ git merge origin master
+merge: origin - not something we can merge
+macs-MacBook-Pro-6:Myfolder Mac$ git merge master
+Already up to date.
+macs-MacBook-Pro-6:Myfolder Mac$ git checkout master
+Already on 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+macs-MacBook-Pro-6:Myfolder Mac$ git pull origin master
+From https://github.com/nourhansamyy/Nourhan-Reposi
+ * branch            master     -> FETCH_HEAD
+Updating c74d1d6..b2a5d64
+Fast-forward
+ AllMyCommands.txt | 506 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 506 insertions(+)
+macs-MacBook-Pro-6:Myfolder Mac$ git checkout ReadMe
+Switched to branch 'ReadMe'
+Your branch is up to date with 'origin/ReadMe'.
+macs-MacBook-Pro-6:Myfolder Mac$ git merge master
+Updating bc60c20..b2a5d64
+Fast-forward
+ AllMyCommands.txt | 506 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md         |   4 +-
+ 2 files changed, 509 insertions(+), 1 deletion(-)
+macs-MacBook-Pro-6:Myfolder Mac$ git push origin ReadMe
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/nourhansamyy/Nourhan-Reposi.git
+   bc60c20..b2a5d64  ReadMe -> ReadMe
+macs-MacBook-Pro-6:Myfolder Mac$ 
+
