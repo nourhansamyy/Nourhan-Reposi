@@ -16,8 +16,10 @@ When you create the commit by running git commit, Git checksums each subdirector
 Your Git repository now contains five objects: one blob for the contents of each of your three files, one tree that lists the contents of the directory and specifies which file names are stored as which blobs, and one commit with the pointer to that root tree and all the commit metadata.
 43
 Chapter 3 ■ Git BranChinG
- Figure 3-1.![Logo](https://git-scm.com/book/en/v2/images/commit-and-tree.png)
+ Figure 3-1.
  A commit and its tree
+ ![commit-and-tree](https://user-images.githubusercontent.com/36333744/36319771-a8d4f9a8-134c-11e8-9196-386f495b2ff4.png)
+
 If you make some changes and commit again, the next commit stores a pointer to the commit that came
 immediately before it.
  Figure 3-2.  ![Logo](https://git-scm.com/book/en/v2/images/commits-and-parents.png)
