@@ -2,83 +2,123 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          <paper-table :title="table1.title" :sub-title="table1.subTitle" :data="table1.data" :columns="table1.columns">
+  <button @click= "CreateProduct()">  Create Me!</button>s
+          <table class="table table-bordered table-inverse">
 
-          </paper-table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th> Name</th>
+          <th> Price</th>
+          <th> Created AT</th>
+          <th> Updated AT</th>
+          <th> Actions </th>
+          <th> sellername </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for= "product in ProductsArray.data">=
+
+          <td> {{product.name}} </td>
+          <td> {{product.price}} </td>
+          <td> {{product.createdAt}} </td>
+          <td> {{product.updatedAt}} </td>
+          <td>  <img src="static/img/bin image." v-on:mouseover="hovered()" />  </td>
+          <td> Nourhan Samy </td>
+
+
+
+        </tr>
+      </tbody>
+
+    </table>
         </div>
       </div>
+      <input type="text" v-model= "product.name"> Name <br>
+      <input type="text" v-model= "product.price"> Price <br>
+      <input type="text" v-model= "product.id"> IDUPDATE <br>
+ <button @click= "UpdateMe()">  Update Me!</button>
 
+<br>
+<br>
+  <button @click= "DeleteMe()">  Delete Me!</button> <input type="text" v-model= "product.id"> ID <br>
+  <br>
+  <br>
+  <button @click= "Search()">   Search!</button> <input type="text" v-model= "product.id"> ID <br>
     </div>
 </template>
 <script>
-  import PaperTable from 'components/UIComponents/PaperTable.vue'
-  const tableColumns = ['Id', 'Name', 'Price', 'CreatedAt', 'UpdatedAt', 'SellerName']
-  const tableData = [{
-    id: 1,
-    name: ' Black Prom Dress',
-    price: '$16.738',
-    createdat: '15/2/2018',
-    updatedat: '16/2/2018',
-    sellername: 'Nourhan Samy'
-  },
 
-  {
-    id: 2,
-    name: 'Clock',
-    price: '$26.738',
-    createdat: '15/2/2018',
-    updatedat: '16/2/2018',
-    sellername: 'Passant Omar'
-  },
+import axios from 'axios'
+import PaperTable from 'components/UIComponents/PaperTable.vue'
+const tableColumns = ['Id', 'Name', 'Price', 'CreatedAt', 'UpdatedAt', 'SellerName', 'Action', '']
+const tableData = [{
 
-  {
-    id: 2,
-    name: 'Sweater',
-    price: '$346.738',
-    createdat: '15/2/2018',
-    updatedat: '16/2/2018',
-    sellername: 'Khaled EL Shimi'
-  },
+},
+{
 
-  {
-    id: 3,
-    name: 'Pantalone',
-    price: '$134.738',
-    createdat: '15/2/2018',
-    updatedat: '16/2/2018',
-    sellername: 'Rawan shehab'
+}]
+export default {
+  components: {
+    PaperTable
   },
-  {
-    id: 3,
-    name: 'Dog',
-    price: '$176.738',
-    createdat: '15/2/2018',
-    updatedat: '16/2/2018',
-    sellername: ' Mina Ramsis'
-  }
-]
+  data () {
+    return {
+      product: {
+        id: '',
+        name: '',
+        price: '',
+        createdat: '',
+        updatedat: ''
+      },
+      ProductsArray: []
 
-  export default {
-    components: {
-      PaperTable
+    }
+  },
+  mounted () {
+    axios.get('http://localhost:3000/api/product/getProducts')
+    .then((response) => {
+      console.log(response.data)
+      this.ProductsArray = response.data
+    })
+  },
+  methods: {
+    CreateProduct () {
+      axios.post('http://localhost:3000/api/product/createProduct', {
+        name: 'dog',
+        price: 5000
+      })
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
     },
-    data () {
-      return {
-        table1: {
-          title: ' Component 1 Olx',
-          subTitle: 'Here is the products for this table',
-          columns: [...tableColumns],
-          data: [...tableData]
-        },
-        table2: {
-          title: 'Table on Plain Background',
-          subTitle: 'Here is a subtitle for this table',
-          columns: [...tableColumns],
-          data: [...tableData]
-        }
-      }
+    DeleteMe () {
+      axios.delete('http://localhost:3000/api/product/deleteProduct' + '/' + this.product.id)
+  .then((response) => {
+    console.log(response)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+    },
+    UpdateMe () {
+      axios.patch('http://localhost:3000/api/product/updateProduct' + '/' + this.product.id, {
+        name: this.product.name,
+        price: this.product.price
+      })
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
     }
   }
+}
 
 </script>
 <style>
