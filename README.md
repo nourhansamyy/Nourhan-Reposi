@@ -1,10 +1,16 @@
-# Nourhan-Reposi
- Sprint 0
- 
- This Repo contains three file,The first file contains Getting Started-About Version Control form. The seconf file contains   Git branching-branches in a Nutshell, As for the third file it contains Distributed Git-Distributed Workflows
+# Vue seed project
 
- Nourhan samy , 37-12655
- 
- book Chacon, Scott, and Ben Straub. Pro Git. Apress, 2014 )
+## Documentation
+Link to [Documentation](https://cristijora.github.io/vue-paper-dashboard-docs/#/)
 
+## Build Setup
 
+### install dependencies
+`npm install`
+### serve with hot reload at localhost:8080
+`npm run dev`
+
+* Please don't use jQuery or jQuery based plugins since there are many pure Vue alternatives
+* Write unit tests for your custom components. See fgInput.spec and paper-table.spec
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
