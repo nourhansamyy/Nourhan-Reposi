@@ -1,3 +1,5 @@
+
+
 <template>
     <div class="row">
       <div class="col-md-12">
@@ -104,6 +106,7 @@ export default {
   .catch((error) => {
     console.log(error)
   })
+      window.location.reload()
     },
     UpdateMe () {
       axios.patch('http://localhost:3000/api/product/updateProduct' + '/' + this.product.id, {
@@ -116,6 +119,7 @@ export default {
     .catch((error) => {
       console.log(error)
     })
+      window.location.reload()
     }
   }
 }
